@@ -85,7 +85,6 @@ func main() {
 			}
 
 		case "withdrawal":
-			var amount int
 			fmt.Print("Enter a value to withdraw: ")
 			amount, err := readInt()
 			if err != nil {
