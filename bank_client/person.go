@@ -11,6 +11,8 @@ import (
 	"github.com/google/uuid"
 )
 
+// person represents client of bank. Contains clients personal information
+// and balance.
 type person struct {
 	ID        uuid.UUID
 	FirstName string `json:"firstname"`
@@ -25,6 +27,8 @@ func (p *person) String() string {
 	return fmt.Sprintf("%s %s [id:%s...]", p.FirstName, p.LastName, p.ID.String()[:6])
 }
 
+// NewTestPerson reads data from JSON file and returns pointer to a person
+// struct with the data specified in file. Intends for testing purposes.
 func NewTestPerson(filePath string) *person {
 	file, err := os.Open(filePath)
 	if err != nil {
